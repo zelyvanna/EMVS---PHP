@@ -1,0 +1,59 @@
+#divPrincipal{
+    height:auto;
+    width:80%;
+    border:10px;
+    background-color:white;
+    margin:auto;
+    margin-top:20px;
+    border-radius: 15px;
+}
+#body{
+    background-color:#C3232D;
+}
+#evaNomTitre{
+	padding-top: 25px;
+}
+.input{
+	padding-left : 25px;
+	padding-right: 25px;
+	width:100%;
+
+}
+.input textarea{
+	width:100%;
+}
+.th{
+	-webkit-transform: rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	font-weight:normal ;
+	height:50px;
+	vertical-align:middle;
+	text-align:center;
+	margin:auto;
+}
+.table{
+	padding-left : 25px;
+	padding-right: 25px;
+	width:100%;
+}
+
+.radio{
+		
+	vertical-align:middle;
+	text-align:center;
+	horiz-align: center;
+	margin:auto;
+
+}
+#head{
+	height:100px;
+}
+.groupeQuestion{
+	font-size: 20px;
+	font-weight: bold;
+}
+#sendingButton{
+	width: 30%;
+	height:25px;
+}
