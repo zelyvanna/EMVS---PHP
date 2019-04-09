@@ -1,0 +1,11 @@
+<?php
+	require('class_Article.php');
+	session_start();
+	
+	echo "<pre>";
+	print_r($_SESSION);
+	echo "</pre>";
+	
+	foreach($_SESSION["catalogue"] as $article) {
+		echo $article->detail()."<br/>";
+	}

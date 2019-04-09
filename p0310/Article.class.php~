@@ -1,0 +1,14 @@
+<?php
+class Article {
+	private $_description;
+	private $_prix;
+	
+	function Article($description, $prix) {
+		$this->_description = $description;
+		$this->_prix = $prix;
+	}
+	
+	function detail() {
+		return sprintf("%s à %1.2f CHF", $this->_description, $this->_prix);
+	}
+}
