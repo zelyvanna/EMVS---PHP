@@ -1,0 +1,14 @@
+rem ---- Permet d'accèder au patage d'un PC distant
+rem ---- EMVs - RAUP - 13.02.2008
+
+set network = CreateObject ("WScript.Network")
+strHost = InputBox("Entrer le nom du PC distant","Hostname",network.ComputerName)
+
+If strHost = "" Then
+    Wscript.Quit
+Else
+    shareName = "\\" & strHost & "\Partage"
+    network.MapNetworkDrive "Z:", shareName , False, "partage", "partage"
+End If
+
+

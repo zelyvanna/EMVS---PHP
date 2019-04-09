@@ -14,13 +14,13 @@
 
 	//Delete
 	if( isset($_POST["deleteMovie"]) ) {
-		$cat->removeMovie($_POST["filmId"]);
-		printf("<p>Le film avec le PK:%d a été supprimé</p>", $_POST["filmId"]);
+		$cat->removeMovie($_POST["PK_film"]);
+		printf("<p>Le film avec le PK:%d a été supprimé</p>", $_POST["PK_film"]);
 	}
 	//Update
 	if( isset($_POST["editMovie"]) ) {
-		if(checkFields($_POST["filmTitre"], $_POST["filmAnnee"], $_POST["filmNomMES"], $_POST["filmPrenomMES"], $_POST["filmAnneeNaissanceMES"])) {
-			$movie = new Movie($_POST["filmId"], $_POST["filmTitre"], $_POST["filmAnnee"], $_POST["filmNomMES"], $_POST["filmPrenomMES"], $_POST["filmAnneeNaissanceMES"]);
+		if(checkFields($_POST["titreFilm"], $_POST["anneeFilm"], $_POST["nomMES"], $_POST["prenomMES"], $_POST["anneeNaissanceMES"])) {
+			$movie = new Movie($_POST["PK_film"], $_POST["titreFilm"], $_POST["anneeFilm"], $_POST["nomMES"], $_POST["prenomMES"], $_POST["anneeNaissanceMES"]);
 			echo "<p>Film modifié ainsi :</p>";
 			$movie->getDetail();
 			uploadAffiche($movie->getPK());
@@ -30,8 +30,8 @@
 	}
 	//Add
 	if( isset($_POST["addMovie"]) ) {
-		if(checkFields($_POST["filmTitre"], $_POST["filmAnnee"], $_POST["filmNomMES"], $_POST["filmPrenomMES"], $_POST["filmAnneeNaissanceMES"])) {
-			$movie = new Movie($_POST["filmTitre"], $_POST["filmAnnee"], $_POST["filmNomMES"], $_POST["filmPrenomMES"], $_POST["filmAnneeNaissanceMES"]);
+		if(checkFields($_POST["titreFilm"], $_POST["anneeFilm"], $_POST["nomMES"], $_POST["prenomMES"], $_POST["anneeNaissanceMES"])) {
+			$movie = new Movie($_POST["titreFilm"], $_POST["anneeFilm"], $_POST["nomMES"], $_POST["prenomMES"], $_POST["anneeNaissanceMES"]);
 			echo "<p>Nouveau film créé :</p>";
 			$movie->getDetail();
 			uploadAffiche($movie->getPK());
@@ -44,7 +44,7 @@
 	//Formulaire Edition
 	$showList = true;
 	if( isset($_POST["chooseMovie"]) ) {
-		$movie = new Movie($_POST["filmId"]);
+		$movie = new Movie($_POST["PK_film"]);
 		$movie->getEditForm();
 		$showList = false;
 	}
@@ -56,7 +56,7 @@
 	}
 	//Show detail
 	if( isset($_POST["showMovie"]) ) {
-		$movie = new Movie($_POST["filmId"]);
+		$movie = new Movie($_POST["PK_film"]);
 		$movie->getFullDetail();
 		$showList = false;
 		echo '<p class="clear"><a href="">Retour à la liste des films</a></p>';
